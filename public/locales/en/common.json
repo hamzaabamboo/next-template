@@ -1,4 +1,15 @@
 {
   "message": "Message",
-  "set-message": "Set message"
+  "set-message": "Set message",
+  "tag": "Tag",
+  "add-tag": "Add Tag",
+  "delete": "Delete",
+  "edit": "Edit",
+  "loading": "Loading Data...",
+  "collection": "Collection",
+  "add-collection": "Add Collection",
+  "add-media": "Add Media",
+  "title": "タイトル",
+  "file": "File",
+  "add": "Add"
 }

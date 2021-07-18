@@ -7,12 +7,14 @@ import { appWithTranslation } from "next-i18next";
 import { PageContext } from "types/PageContext";
 import Head from "next/head";
 import theme from "src/theme";
+import { AppWrapper } from "~/components/AppWrapper";
+import i18nextConfig from "../next-i18next.config";
 
 function MyApp({ Component, pageProps }: AppProps<PageContext>) {
   const { isStatic, head, backgroundImage } = pageProps as PageContext;
   const { title, image, description, url, banner } = head || {};
 
-  const DEFAULT_TITLE = "NextJS Template";
+  const DEFAULT_TITLE = "Media Collection";
   const DEFAULT_DESCRIPTION = "Created by HamP";
 
   return (
@@ -47,11 +49,13 @@ function MyApp({ Component, pageProps }: AppProps<PageContext>) {
       </Head>
       <ChakraProvider theme={theme}>
         <Provider store={store}>
-          <Component {...pageProps} />
+          <AppWrapper>
+            <Component {...pageProps} />
+          </AppWrapper>
         </Provider>
       </ChakraProvider>
     </>
   );
 }
 
-export default appWithTranslation(MyApp);
+export default appWithTranslation(MyApp, i18nextConfig);

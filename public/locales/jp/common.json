@@ -1,4 +1,15 @@
 {
   "message": "メッセージ",
-  "set-message": "メッセージをセットする"
+  "set-message": "メッセージをセットする",
+  "tag": "タグ",
+  "add-tag": "タグを追加",
+  "delete": "削除",
+  "edit": "編集",
+  "loading": "読み込み中",
+  "collection": "コレクション",
+  "add-collection": "コレクションを追加",
+  "add-media": "メディアを追加",
+  "title": "タイトル",
+  "file": "ファイル",
+  "add": "追加"
 }

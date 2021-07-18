@@ -12,7 +12,7 @@ export const useLocalStorage = function <T>(
     s: SetStateAction<T | null>
   ) => {
     // eslint-disable-next-line
-    const newData = typeof s === "function" ? s.call(this, data) : s;
+    const newData = typeof s === "function" ? (s as any)(data) : s;
     storage.current.value = newData;
     setData(newData);
   };
