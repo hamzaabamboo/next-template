@@ -2,6 +2,7 @@
   "message": "メッセージ",
   "set-message": "メッセージをセットする",
   "tag": "タグ",
+  "tags": "タグ",
   "add-tag": "タグを追加",
   "delete": "削除",
   "edit": "編集",
@@ -11,5 +12,6 @@
   "add-media": "メディアを追加",
   "title": "タイトル",
   "file": "ファイル",
-  "add": "追加"
+  "add": "追加",
+  "app-title": "メディアコレクション {{version}}"
 }

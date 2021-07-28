@@ -1,4 +1,4 @@
-import { TagList } from "~/components/TagList";
+import { TagList } from "~/components/tag/TagList";
 import { createGetStaticProps } from "~/utils/createGetStaticProps";
 
 export const getStaticProps = createGetStaticProps(["common"]);

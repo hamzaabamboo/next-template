@@ -4,6 +4,7 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { SideBarProvider } from "~/contexts/SideBarContext";
 import { useDispatch } from "~/hooks/state";
 import { initDexie } from "~/storage";
 
@@ -38,5 +39,5 @@ export const AppWrapper: React.FunctionComponent<{}> = ({ children }) => {
       </Flex>
     );
 
-  return <>{children}</>;
+  return <SideBarProvider>{children}</SideBarProvider>;
 };

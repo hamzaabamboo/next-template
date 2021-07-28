@@ -1,13 +1,13 @@
 import { Tag } from "@chakra-ui/react";
 
-export type MediaType = "gif";
+export type MediaType = string;
 
 export interface Media {
   id: string;
   title: string;
   type: MediaType;
   file: File;
-  tags: Tag[];
+  tags: string[];
   createdDate: Date;
   updatedDate: Date;
 }

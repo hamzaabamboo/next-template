@@ -2,6 +2,7 @@
   "message": "Message",
   "set-message": "Set message",
   "tag": "Tag",
+  "tags": "tags",
   "add-tag": "Add Tag",
   "delete": "Delete",
   "edit": "Edit",
@@ -11,5 +12,6 @@
   "add-media": "Add Media",
   "title": "Title",
   "file": "File",
-  "add": "Add"
+  "add": "Add",
+  "app-title": "Media Collection {{version}}"
 }

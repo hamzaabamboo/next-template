@@ -1,7 +1,7 @@
 import Dexie from "dexie";
 import { Collection, Media, Tag } from "~/types/media";
 
-const DB_VERSION = 1;
+const DB_VERSION = 2;
 
 interface IDexieDB extends Dexie {
   media: Dexie.Table<Media>;
@@ -13,9 +13,9 @@ export const db: IDexieDB = new Dexie("gif-collection") as any;
 export const initDexie = async () => {
   if (db.isOpen()) return;
   db.version(DB_VERSION).stores({
-    media: "id, title, type, tags, createdDate, updatedDate",
+    media: "id, title, type, *tags, createdDate, updatedDate",
     tags: "id, name",
-    collections: "id, name, media",
+    collections: "id, name, *media",
   });
   return db;
 };

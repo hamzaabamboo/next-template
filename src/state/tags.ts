@@ -1,7 +1,7 @@
 import { createModel } from "@rematch/core";
 import { uuid } from "uuidv4";
 import { db } from "~/storage";
-import { Tag, TagInput } from "~/types/media";
+import { Media, Tag, TagInput } from "~/types/media";
 import { RootModel } from "./models";
 
 export interface IState {
@@ -34,7 +34,14 @@ export const TagModel = createModel<RootModel>()({
     },
     deleteTag: async (tagId: string) => {
       await db.tags.delete(tagId);
+      const media = await db.media.where("tags").equals(tagId).toArray();
+      const newMedia = media.map((m) => ({
+        ...m,
+        tags: m.tags.filter((t) => t !== tagId),
+      }));
+      await db.media.bulkPut(newMedia);
       dispatch.tag.removeTag(tagId);
+      dispatch.media.bulkUpdateMedia(newMedia);
     },
     fetchTags: async () => {
       const tags = await db.tags.toArray();
